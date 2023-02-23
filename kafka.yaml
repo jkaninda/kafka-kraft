@@ -1,14 +1,8 @@
-# kafka-kraft
-Kubernetes Apache Kafka Kraft
-
-## Kubernetes
-
-```yaml
 #kafka.yaml
 apiVersion: v1
 kind: Service
 metadata:
-  name: kafka
+  name: kafka-svc
   labels:
     app: kafka-app
 spec:
@@ -21,7 +15,7 @@ spec:
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: kafka-svc
+  name: kafka
   labels:
     app: kafka-app
 spec:
@@ -43,7 +37,7 @@ spec:
             - containerPort: 9093
           env:
             - name: REPLICAS
-              value: '3'
+              value: '2'
             - name: SERVICE
               value: kafka-svc
             - name: NAMESPACE
@@ -60,7 +54,7 @@ spec:
             - name: data
               mountPath: /mnt/kafka
       #imagePullSecrets:
-      #  - name: registry-secret
+        #- name: registry-secret
   volumeClaimTemplates:
     - metadata:
         name: data
@@ -70,4 +64,3 @@ spec:
         resources:
           requests:
             storage: "10Gi"
-```
