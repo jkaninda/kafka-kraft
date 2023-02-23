@@ -7,6 +7,6 @@ if [ $# -eq 0 ]
 fi
 
  echo 'Build latest'
- docker build -f ./docker/amd64/8.1/Dockerfile -t jkaninda/laravel-php-fpm:$tag .
+ docker build -f ./docker/Dockerfile -t jkaninda/kafka-kraft:$tag .
  
 
