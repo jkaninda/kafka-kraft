@@ -1,3 +1,7 @@
+[![Docker-build](https://github.com/jkaninda/kafka-kraft/actions/workflows/build.yml/badge.svg)](https://github.com/jkaninda/kafka-kraft/actions/workflows/build.yml)
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/jkaninda/kafka-kraft?style=flat-square)
+![Docker Pulls](https://img.shields.io/docker/pulls/jkaninda/kafka-kraft?style=flat-square)
+
 # kafka-kraft
 Kubernetes Apache Kafka Kraft
 
