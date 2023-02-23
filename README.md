@@ -12,7 +12,7 @@ Kubernetes Apache Kafka Kraft
 apiVersion: v1
 kind: Service
 metadata:
-  name: kafka
+  name: kafka-svc
   labels:
     app: kafka-app
 spec:
@@ -25,7 +25,7 @@ spec:
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: kafka-svc
+  name: kafka
   labels:
     app: kafka-app
 spec:
@@ -64,7 +64,7 @@ spec:
             - name: data
               mountPath: /mnt/kafka
       #imagePullSecrets:
-      #  - name: registry-secret
+        #- name: registry-secret
   volumeClaimTemplates:
     - metadata:
         name: data
